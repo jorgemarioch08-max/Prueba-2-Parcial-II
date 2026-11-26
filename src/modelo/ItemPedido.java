@@ -1,0 +1,29 @@
+package modelo;
+
+import java.io.Serializable;
+
+public class ItemPedido implements Serializable {
+    private Producto producto;
+    private int cantidad;
+
+    public ItemPedido(Producto producto, int cantidad) {
+        this.producto = producto;
+        this.cantidad = cantidad;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void sumarCantidad(int cantidad) {
+        this.cantidad+=cantidad;
+    }
+
+    public double getSubtotal() {
+        return producto.getPrecio() * cantidad;
+    }
+}
